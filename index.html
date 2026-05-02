@@ -553,6 +553,75 @@
       .water-circle { width: 90px; height: 90px; }
     }
 
+    /* ── FAQ SECTION ────────────────────────────────────────── */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .faq-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-group-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--teal-700);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--teal-100);
+    }
+    .faq-group-title svg { color: var(--teal-500); flex-shrink: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      text-align: left;
+      transition: color .2s;
+    }
+    .faq-q:hover { color: var(--teal-600); }
+    .faq-q[aria-expanded="true"] { color: var(--teal-600); }
+    .faq-icon {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--teal-500);
+      flex-shrink: 0;
+      transition: transform .25s;
+      line-height: 1;
+    }
+    .faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 0 0 16px;
+    }
+    .faq-a.open { display: block; }
+    .faq-a p {
+      font-size: .92rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .faq-a strong { color: var(--gray-800); }
+    @media (max-width: 900px) {
+      .faq-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
     /* Utility */
     .hidden { display: none !important; }
     .mt-8 { margin-top: 8px; }
@@ -568,6 +637,32 @@
     }
     .select-wrap select { padding-right: 32px; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is a normal BMI for adults?", "acceptedAnswer": { "@type": "Answer", "text": "A BMI between 18.5 and 24.9 is considered normal (healthy weight) for adults aged 20 and older, according to the World Health Organization. Below 18.5 is underweight, 25-29.9 is overweight, and 30 or above is obese." } },
+      { "@type": "Question", "name": "What is a healthy BMI for women?", "acceptedAnswer": { "@type": "Answer", "text": "The healthy BMI range for women is 18.5 to 24.9, the same as for men. Women naturally carry more body fat than men at the same BMI, so body fat percentage provides a more complete picture." } },
+      { "@type": "Question", "name": "Is BMI accurate for everyone?", "acceptedAnswer": { "@type": "Answer", "text": "BMI is a useful screening tool but can overestimate body fat in muscular athletes and underestimate it in older adults with low muscle mass. Use BMI alongside waist circumference and body fat percentage for a fuller picture." } },
+      { "@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": { "@type": "Answer", "text": "BMI is calculated by dividing your weight in kilograms by the square of your height in meters: BMI = kg / m2. In imperial units: BMI = (lbs / in2) x 703." } },
+      { "@type": "Question", "name": "How many calories should I eat per day to lose weight?", "acceptedAnswer": { "@type": "Answer", "text": "To lose approximately 1 lb per week, eat roughly 500 calories below your TDEE per day. Most health professionals recommend not going below 1,200 calories/day for women or 1,500 for men without medical supervision." } },
+      { "@type": "Question", "name": "What is TDEE and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "TDEE stands for Total Daily Energy Expenditure — the total calories your body burns in a day including basal metabolic rate, activity, and digestion. Eat below it to lose weight, at it to maintain, and above it to gain." } },
+      { "@type": "Question", "name": "What is BMR and how is it different from TDEE?", "acceptedAnswer": { "@type": "Answer", "text": "BMR (Basal Metabolic Rate) is the calories your body burns at complete rest to maintain vital functions. TDEE multiplies BMR by an activity factor to estimate total daily calorie burn including all movement." } },
+      { "@type": "Question", "name": "What is a healthy body fat percentage?", "acceptedAnswer": { "@type": "Answer", "text": "For men: athletic 6-13%, fit 14-17%, average 18-24%, obese 25%+. For women: athletic 14-20%, fit 21-24%, average 25-31%, obese 32%+. These ranges are from the American Council on Exercise." } },
+      { "@type": "Question", "name": "Can you have a normal BMI but high body fat?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — this is called normal weight obesity or skinny fat. A person can have a BMI of 18.5-24.9 but carry disproportionately high body fat due to low muscle mass." } },
+      { "@type": "Question", "name": "What is my ideal weight for my height?", "acceptedAnswer": { "@type": "Answer", "text": "Ideal weight depends on height, frame size, muscle mass, and gender. For a 5ft10in male, common formulas suggest roughly 166-172 lbs. For a 5ft6in female, roughly 130-140 lbs." } },
+      { "@type": "Question", "name": "How much water should I drink a day?", "acceptedAnswer": { "@type": "Answer", "text": "A personalized approach is roughly 35 ml per kg of body weight, adjusted for activity and climate. For a 165 lb (75 kg) moderately active person, this is about 90-100 oz (2.6-3 liters) per day." } },
+      { "@type": "Question", "name": "Does drinking more water help with weight loss?", "acceptedAnswer": { "@type": "Answer", "text": "Adequate hydration supports weight management: drinking water before meals can reduce calorie intake, cold water slightly boosts metabolism, and staying hydrated prevents fatigue that can be misread as hunger." } },
+      { "@type": "Question", "name": "Do I need more water if I exercise?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A general guideline is an extra 12-16 oz (350-500 ml) per 30 minutes of moderate exercise. For intense exercise over 60 minutes, electrolyte replacement also becomes important." } },
+      { "@type": "Question", "name": "How accurate is the TDEE calculator?", "acceptedAnswer": { "@type": "Answer", "text": "The Mifflin-St Jeor equation is accurate to within plus or minus 10% for most people and is considered the most reliable formula by major nutrition organizations." } },
+      { "@type": "Question", "name": "What is the difference between ideal weight and healthy weight range?", "acceptedAnswer": { "@type": "Answer", "text": "Healthy weight range is a broad span (30-40 lbs for most heights) derived from BMI thresholds of 18.5-24.9. Ideal weight is a more precise point estimate from clinical formulas accounting for gender and frame size." } },
+      { "@type": "Question", "name": "What counts toward my daily water intake?", "acceptedAnswer": { "@type": "Answer", "text": "All beverages count toward hydration including water, coffee, tea, juice, and milk. Foods with high water content also contribute. Plain water is the best choice as it has no calories or additives." } },
+      { "@type": "Question", "name": "Does BMI change with age?", "acceptedAnswer": { "@type": "Answer", "text": "For adults 20 and older, the same BMI thresholds apply regardless of age. However, older adults tend to have more body fat at the same BMI. For children and teens ages 2-19, BMI uses age- and sex-specific growth percentile charts." } },
+      { "@type": "Question", "name": "What is the most accurate way to measure body fat?", "acceptedAnswer": { "@type": "Answer", "text": "From most to least accurate: DEXA scan (gold standard), hydrostatic weighing, BodPod, skinfold calipers by a professional, and bioelectrical impedance (home scales). The Navy tape measure method is free and within 3-4% accuracy for most people." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -590,6 +685,7 @@
       <li><a href="#body-fat">Body Fat</a></li>
       <li><a href="#healthy-range">Healthy Range</a></li>
       <li><a href="#water">Water</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <div class="unit-toggle" role="group" aria-label="Unit system">
         <button id="nav-imperial" class="active" onclick="setUnits('imperial')">Imperial</button>
         <button id="nav-metric" onclick="setUnits('metric')">Metric</button>
@@ -610,6 +706,7 @@
   <a href="#body-fat" onclick="toggleMenu()">Body Fat %</a>
   <a href="#healthy-range" onclick="toggleMenu()">Healthy Weight Range</a>
   <a href="#water" onclick="toggleMenu()">Water Intake</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <div class="mobile-unit-toggle">
     <button id="mob-imperial" class="active" onclick="setUnits('imperial');toggleMenu()">Imperial</button>
     <button id="mob-metric" onclick="setUnits('metric');toggleMenu()">Metric</button>
@@ -1311,6 +1408,122 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ FAQ SECTION ══════════════════════════════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-wrap">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+    <p class="section-desc">Everything you need to know about BMI, calories, body fat, and healthy weight.</p>
+    <div class="faq-grid">
+
+      <div class="faq-group">
+        <h3 class="faq-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 5 4.7 5 9c0 6 7 13 7 13s7-7 7-13c0-4.3-3.5-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          BMI Calculator
+        </h3>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is a normal BMI for adults?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A BMI between <strong>18.5 and 24.9</strong> is considered normal (healthy weight) for adults aged 20 and older, according to the World Health Organization. Below 18.5 is underweight, 25–29.9 is overweight, and 30 or above falls into the obese range. These thresholds apply equally to men and women.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is a healthy BMI for women?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>The healthy BMI range for women is the same as for men: <strong>18.5 to 24.9</strong>. However, women naturally carry more body fat than men at the same BMI, so body fat percentage provides a more complete picture for women.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Is BMI accurate for everyone?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>BMI is a useful screening tool but has well-known limitations. It can <strong>overestimate</strong> body fat in muscular athletes (who may register as overweight despite low body fat), and <strong>underestimate</strong> it in older adults who have lost muscle mass. It also doesn't account for fat distribution. Use BMI alongside waist circumference and body fat percentage for a fuller picture.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How is BMI calculated?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>BMI is calculated by dividing your weight in kilograms by the square of your height in meters: <strong>BMI = kg ÷ m²</strong>. In imperial units: BMI = (lbs ÷ in²) × 703. For example, a person who weighs 165 lbs and stands 5'10" has a BMI of approximately 23.7 — right in the healthy range.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Does BMI change with age?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>For adults 20 and older, the same BMI thresholds apply regardless of age. However, older adults tend to have more body fat at the same BMI than younger adults. For children and teens (ages 2–19), BMI is assessed using age- and sex-specific growth percentile charts.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h3 class="faq-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Daily Calories &amp; TDEE
+        </h3>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How many calories should I eat per day to lose weight?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>To lose approximately 1 lb (0.45 kg) per week, eat roughly <strong>500 calories below your TDEE</strong> per day. For 2 lbs/week, cut 1,000 calories. Most health professionals recommend not going below 1,200 calories/day for women or 1,500 for men without medical supervision. Use the TDEE calculator above to find your personal baseline.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is TDEE and why does it matter?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>TDEE stands for <strong>Total Daily Energy Expenditure</strong> — the total calories your body burns in a day, including your basal metabolic rate, physical activity, and digestion. It's the most important number for weight management: eat below it to lose, at it to maintain, and above it to gain. A sedentary and a very active person of the same size can differ by 700–1,000+ calories per day.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is BMR and how is it different from TDEE?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p><strong>BMR (Basal Metabolic Rate)</strong> is the calories your body burns at complete rest to maintain vital functions. <strong>TDEE</strong> multiplies BMR by an activity factor to estimate total daily calorie burn. Think of BMR as your engine idling and TDEE as your total fuel use for the day.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How many calories do I need to maintain my weight?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Your maintenance calories equal your TDEE. For most moderately active adults this is <strong>1,800–2,500 cal/day for women</strong> and <strong>2,200–3,000 cal/day for men</strong>, though individual variation is significant. The TDEE calculator above uses the Mifflin-St Jeor equation, the most validated formula for estimating energy needs.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How accurate is the TDEE calculator?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>The Mifflin-St Jeor equation used here is accurate to within <strong>±10%</strong> for most people and is considered the most reliable formula by major nutrition organizations. The biggest source of error is the activity multiplier — most people underestimate how sedentary they are. When in doubt, choose a lower activity level and adjust based on real-world results over 2–3 weeks.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h3 class="faq-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Body Fat &amp; Ideal Weight
+        </h3>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is a healthy body fat percentage?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Healthy ranges differ by gender. For <strong>men</strong>: athletic 6–13%, fit 14–17%, average 18–24%, obese 25%+. For <strong>women</strong>: athletic 14–20%, fit 21–24%, average 25–31%, obese 32%+. Women naturally require more essential fat due to hormonal and reproductive functions. These ranges are from the American Council on Exercise.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is the most accurate way to measure body fat?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>From most to least accurate: <strong>DEXA scan</strong> (gold standard, requires clinic), <strong>hydrostatic weighing</strong>, <strong>BodPod</strong>, <strong>skinfold calipers</strong> (professional), <strong>bioelectrical impedance</strong> (home scales, highly variable). The <strong>Navy tape measure method</strong> in our calculator is free and within ~3–4% accuracy for most people.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Can you have a normal BMI but high body fat?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Yes — this is called <strong>normal weight obesity</strong> or "skinny fat." A person can have a BMI of 18.5–24.9 but carry disproportionately high body fat due to low muscle mass. This is one of the key reasons body fat percentage is a more informative health metric than BMI alone, particularly for sedentary individuals and older adults.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is my ideal weight for my height?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>There is no single ideal weight — it depends on your height, frame size, muscle mass, and gender. As a quick reference: for a 5'10" male, common formulas suggest roughly <strong>166–172 lbs</strong>; for a 5'6" female, roughly <strong>130–140 lbs</strong>. Use the Ideal Weight Calculator above for personalized estimates across the Hamwi, Devine, and Robinson formulas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What is the difference between ideal weight and healthy weight range?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p><strong>Healthy weight range</strong> is a broad span (30–40 lbs for most heights) derived from BMI thresholds of 18.5–24.9. <strong>Ideal weight</strong> is a more precise point estimate from clinical formulas accounting for gender and frame size. Ideal weight typically falls near the middle of the healthy weight range.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h3 class="faq-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L5 12a7 7 0 1 0 14 0Z"/></svg>
+          Water Intake
+        </h3>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">How much water should I drink a day?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>The "8 glasses a day" guideline is a rough estimate. A more personalized approach is roughly <strong>35 ml per kg of body weight</strong>, adjusted for activity and climate. For a 165 lb (75 kg) moderately active person, this equals about 90–100 oz (2.6–3 liters) per day. About 20% of daily water comes from food, so your drinking target is somewhat less. Use the Water Intake Calculator above for your number.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Does drinking more water help with weight loss?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Research suggests adequate hydration supports weight management: drinking water before meals can reduce calorie intake, cold water slightly boosts metabolism, and staying hydrated reduces fatigue that can be misread as hunger. Water is not a weight loss solution on its own — it works best as part of a calorie-controlled diet and active lifestyle.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">Do I need more water if I exercise?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Yes. A general guideline is an extra <strong>12–16 oz (350–500 ml) per 30 minutes of moderate exercise</strong>. For intense exercise over 60 minutes, electrolyte replacement also becomes important. Hot or humid climates increase needs further. The Water Intake Calculator applies an activity multiplier automatically.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">What counts toward my daily water intake?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>All beverages count toward hydration — water, coffee, tea, juice, and milk all contribute. Even foods with high water content (cucumbers, watermelon, soup) count. However, <strong>plain water is the best choice</strong> because it has no calories or additives. Caffeinated drinks have a mild diuretic effect but still net-positive for hydration at normal consumption levels.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ AD SLOT 5 (before footer) ══════════════════════════════ -->
 <div class="ad-slot" aria-label="Advertisement">
   <div class="ad-slot-inner">
@@ -1789,6 +2002,15 @@ document.querySelectorAll('.radio-btn input[type="radio"]').forEach(radio => {
   // Init checked state
   if (radio.checked) radio.closest('.radio-btn').classList.add('checked');
 });
+
+
+// ─── FAQ ACCORDION ────────────────────────────────────────────────────────────
+function toggleFAQ(btn) {
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  const answer = btn.nextElementSibling;
+  answer.classList.toggle('open', !expanded);
+}
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 setUnits('imperial');
